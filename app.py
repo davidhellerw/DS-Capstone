@@ -252,7 +252,7 @@ with tab2:
         "IBM": 'lstm_ibm.keras',
         "JNJ": 'lstm_jnj.keras',
         "KO":'lstm_ko.keras',
-        "MSFT":'lstm_msft.keras',
+        "MSFT":'lstm_mfst.keras',
         "NFLX":'lstm_netflix.keras'
     }
 
