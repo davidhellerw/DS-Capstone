@@ -164,9 +164,9 @@ with tab3:
         # Plot the Monte Carlo Simulations (Risk vs Return)
         fig, ax = plt.subplots(figsize=(10, 6))
         ax.scatter(simulation_df.Volatility, simulation_df.Return, c=simulation_df['Sharpe Ratio'], cmap='YlGnBu', marker='o')
-        ax.set_xlabel("Volatility")
-        ax.set_ylabel("Return")
-        ax.set_title("Monte Carlo Simulation: Risk vs Return")
+        ax.set_xlabel("Expected Volatility")
+        ax.set_ylabel("Expected Return")
+        ax.set_title("Portfolio Optimization: Risk vs Return")
 
         # Highlight the best Sharpe ratio
         ax.scatter(max_sharpe_portfolio['Volatility'], max_sharpe_portfolio['Return'], color='red', marker='*', s=200, label="Max Sharpe Ratio")
