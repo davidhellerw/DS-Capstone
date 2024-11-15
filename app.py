@@ -164,9 +164,9 @@ with tab3:
         best_return = np.sum(optimal_weights * returns.mean()) * 252
     
         # Display the performance metrics for the best portfolio
-        st.write(f"Max Sharpe Portfolio Return: {best_return*100:.2f}%")
-        st.write(f"Max Sharpe Portfolio Volatility: {best_volatility*100:.2f}%")
-        st.write(f"Max Sharpe Portfolio Sharpe Ratio: {max_sharpe_ratio:.2f}")
+        st.write(f"Max Sharpe Ratio Portfolio Return: {best_return*100:.2f}%")
+        st.write(f"Max Sharpe Ratio Portfolio Volatility: {best_volatility*100:.2f}%")
+        st.write(f"Max Sharpe Ratio: {max_sharpe_ratio:.2f}")
     
         # Plot the Monte Carlo Simulations (Risk vs Return)
         fig, ax = plt.subplots(figsize=(10, 6))
