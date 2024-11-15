@@ -13,7 +13,8 @@ tab1,tab2,tab3=st.tabs(['Stock Exploration','Price Predictions Using ML Models',
 # Title and introduction
 
 with tab1:
-
+    st.title("Stock Info")
+    
     # Dropdown for stock tickers
     tickers = [
         "AAPL", "MSFT", "GOOGL", "AMZN", "TSLA", "META", "NVDA", "NFLX", "INTC", "AMD",
@@ -226,7 +227,7 @@ with tab3:
         """)
 
 with tab2:
-    st.title("Forecasting using ML Models")
+    st.title("Forecast Stock Prices Using LSTM")
 
     # Create a dropdown menu for the user to select the dataset
     selected_ticker = st.selectbox(
