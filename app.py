@@ -167,6 +167,17 @@ with tab3:
         st.write(f"Max Sharpe Ratio Portfolio Return: {best_return*100:.2f}%")
         st.write(f"Max Sharpe Ratio Portfolio Volatility: {best_volatility*100:.2f}%")
         st.write(f"Max Sharpe Ratio: {max_sharpe_ratio:.2f}")
+
+        # Add an explanation for these metrics
+        st.markdown("""
+        **What these values mean:**
+        
+        - **Max Sharpe Ratio Portfolio Return:** This is the expected annualized return of the portfolio with the maximum Sharpe Ratio, based on historical data. For example, if the return is 28.56%, you can expect a $1000 investment to grow to approximately $1285.60 over one year under similar market conditions.
+        
+        - **Max Sharpe Ratio Portfolio Volatility:** This represents the expected annualized risk (volatility) of the portfolio, meaning the percentage by which returns might fluctuate. A volatility of 31.39% indicates higher risk compared to less volatile portfolios.
+        
+        - **Max Sharpe Ratio:** This measures the portfolio's risk-adjusted return. A Sharpe Ratio of 0.88 means that for every unit of risk, the portfolio generates 0.88 units of excess return above the risk-free rate.
+        """)
     
         # Plot the Monte Carlo Simulations (Risk vs Return)
         fig, ax = plt.subplots(figsize=(10, 6))
@@ -185,11 +196,31 @@ with tab3:
         ax.legend(loc='best')
     
         st.pyplot(fig)
+
+        # Add an explanation for the Risk vs Return Chart
+        st.markdown("""
+        **How to read this chart:**
+        
+        - Each point represents a portfolio configuration with its corresponding **expected volatility** (risk) on the x-axis and **expected return** on the y-axis.
+        - The **color gradient** indicates the Sharpe Ratio, with darker colors showing portfolios with better risk-adjusted returns.
+        - The **red star** represents the portfolio with the highest Sharpe Ratio, which balances return and risk most effectively. Investors might consider this portfolio as an optimal choice.
+        """)
     
         # Display Pie chart for the best portfolio allocation
         fig_pie = go.Figure(data=[go.Pie(labels=selected_stocks, values=optimal_weights.round(3)*100)])
         fig_pie.update_layout(title="Best Portfolio Allocation", showlegend=True)
         st.plotly_chart(fig_pie)
+
+        # Add an explanation for the Allocation Pie Chart
+        st.markdown("""
+        **What this allocation means:**
+        
+        The pie chart shows the recommended allocation of your investment across the selected stocks to achieve the optimal portfolio. For example:
+        
+        - If you want to invest **$1000**, multiply the allocation percentage for each stock by $1000. 
+          - For instance, if a stock has a 30% allocation, you should invest **$300** in that stock.
+        - This allocation is based on maximizing the Sharpe Ratio, which provides the best balance between risk and return.
+        """)
 
 with tab2:
     st.title("Forecasting using ML Models")
