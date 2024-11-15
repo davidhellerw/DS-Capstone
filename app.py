@@ -31,11 +31,11 @@ with tab1:
         "EQIX", "PSA", "AVB", "EQR", "IRM", "EXR", "MAA", "ESS", "UMH", "APTS"
     ]
 
-    ticker = st.sidebar.selectbox("Select a stock ticker", tickers)
+    ticker = st.selectbox("Select a stock ticker", tickers)
 
     # Date range input
-    start_date = st.sidebar.date_input("Start Date", value=pd.to_datetime("2023-01-01"))
-    end_date = st.sidebar.date_input("End Date", value=pd.to_datetime("2024-01-01"))
+    start_date = st.date_input("Start Date", value=pd.to_datetime("2023-01-01"))
+    end_date = st.date_input("End Date", value=pd.to_datetime("2024-01-01"))
 
     # Download stock data for the selected ticker
     stock_data = yf.download(ticker, start=start_date, end=end_date)
