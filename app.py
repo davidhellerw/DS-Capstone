@@ -101,81 +101,88 @@ with tab3:
     # User selects the stocks
     selected_stocks = st.multiselect("Select Stocks", tickers, default=['GOOGL', 'AAPL'])
 
-    # Ensure that the user selects at least 2 stocks
+        # Ensure that the user selects at least 2 stocks
     if len(selected_stocks) < 2:
         st.warning("Please select at least 2 stocks.")
     else:
         # Download stock data
         data = yf.download(selected_stocks, start="2020-01-01", end="2024-01-01")['Adj Close']
         st.write(f"Data for selected stocks: {selected_stocks}")
-
+    
         # Calculate daily returns
         returns = data.pct_change().dropna()
-
+    
         # Monte Carlo Simulation Parameters
         num_simulations = 10000
         num_assets = len(selected_stocks)
         risk_free_rate = 0.01  # Risk-free rate (1% for example)
-
+    
         # Arrays to store simulation results
         results = np.zeros((3, num_simulations))
-
+    
+        # Initialize variables to track the best Sharpe Ratio and corresponding weights
+        max_sharpe_ratio = -np.inf  # Set to a very low value
+        optimal_weights = None  # Placeholder for the weights of the best portfolio
+    
         for i in range(num_simulations):
             # Generate random portfolio weights that sum to 1
             weights = np.random.random(num_assets)
             weights /= np.sum(weights)  # Normalize to sum to 1
-
+    
             # Portfolio return and volatility (standard deviation)
             portfolio_return = np.sum(weights * returns.mean()) * 252  # Annualize return
             portfolio_volatility = np.sqrt(np.dot(weights.T, np.dot(returns.cov() * 252, weights)))  # Annualized volatility
-
+    
             # Calculate Sharpe ratio (using risk-free rate)
             sharpe_ratio = (portfolio_return - risk_free_rate) / portfolio_volatility
-
+    
             # Store results
             results[0, i] = portfolio_return
             results[1, i] = portfolio_volatility
             results[2, i] = sharpe_ratio
-
+    
+            # Update max Sharpe Ratio and save corresponding weights
+            if sharpe_ratio > max_sharpe_ratio:
+                max_sharpe_ratio = sharpe_ratio
+                optimal_weights = weights  # Save weights for the best portfolio
+    
         # Convert results into a DataFrame for better readability
         simulation_df = pd.DataFrame(results.T, columns=["Return", "Volatility", "Sharpe Ratio"])
-
-        # Find the portfolio with the maximum Sharpe ratio
-        max_sharpe_idx = simulation_df['Sharpe Ratio'].idxmax()
-        max_sharpe_portfolio = simulation_df.iloc[max_sharpe_idx]
-        best_weights = np.random.random(num_assets)
-        best_weights /= np.sum(best_weights)  # Best weights for the optimal portfolio
-
-        # Format the portfolio allocation into a DataFrame for display
+    
+        # Use the optimal weights for the portfolio allocation display
         portfolio_df = pd.DataFrame({
             'Stock': selected_stocks,
-            'Allocation': best_weights.round(3)  # Round the allocation to 3 decimal places
+            'Allocation': optimal_weights.round(3)  # Use saved optimal weights
         })
-
+    
         # Display the best portfolio allocation
         st.write("Best Portfolio Allocation:")
         st.dataframe(portfolio_df)
-
+    
+        # Calculate metrics for the portfolio with the maximum Sharpe Ratio
+        best_volatility = np.sqrt(np.dot(optimal_weights.T, np.dot(returns.cov() * 252, optimal_weights)))
+        best_return = np.sum(optimal_weights * returns.mean()) * 252
+    
         # Display the performance metrics for the best portfolio
-        st.write(f"Max Sharpe Portfolio Return: {max_sharpe_portfolio['Return']*100:.2f}%")
-        st.write(f"Max Sharpe Portfolio Volatility: {max_sharpe_portfolio['Volatility']*100:.2f}%")
-        st.write(f"Max Sharpe Portfolio Sharpe Ratio: {max_sharpe_portfolio['Sharpe Ratio']:.2f}")
-
+        st.write(f"Max Sharpe Portfolio Return: {best_return*100:.2f}%")
+        st.write(f"Max Sharpe Portfolio Volatility: {best_volatility*100:.2f}%")
+        st.write(f"Max Sharpe Portfolio Sharpe Ratio: {max_sharpe_ratio:.2f}")
+    
         # Plot the Monte Carlo Simulations (Risk vs Return)
         fig, ax = plt.subplots(figsize=(10, 6))
         ax.scatter(simulation_df.Volatility, simulation_df.Return, c=simulation_df['Sharpe Ratio'], cmap='YlGnBu', marker='o')
         ax.set_xlabel("Expected Volatility")
         ax.set_ylabel("Expected Return")
         ax.set_title("Portfolio Optimization: Risk vs Return")
-
+    
         # Highlight the best Sharpe ratio
-        ax.scatter(max_sharpe_portfolio['Volatility'], max_sharpe_portfolio['Return'], color='red', marker='*', s=200, label="Max Sharpe Ratio")
+        ax.scatter(best_volatility, best_return, color='red', marker='*', s=200, label="Max Sharpe Ratio")
         ax.legend(loc='best')
-
+    
         st.pyplot(fig)
-
+    
         # Display Pie chart for the best portfolio allocation
-        fig_pie = go.Figure(data=[go.Pie(labels=selected_stocks, values=best_weights.round(3)*100)])
+        fig_pie = go.Figure(data=[go.Pie(labels=selected_stocks, values=optimal_weights.round(3)*100)])
         fig_pie.update_layout(title="Best Portfolio Allocation", showlegend=True)
         st.plotly_chart(fig_pie)
 
