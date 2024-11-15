@@ -172,11 +172,11 @@ with tab3:
         st.markdown("""
         **What these values mean:**
         
-        - **Max Sharpe Ratio Portfolio Return:** This is the expected annualized return of the portfolio with the maximum Sharpe Ratio, based on historical data. For example, if the return is 28.56%, you can expect a $1000 investment to grow to approximately $1285.60 over one year under similar market conditions.
+        - **Max Sharpe Ratio Portfolio Return:** This is the expected annualized return of the portfolio with the maximum Sharpe Ratio, based on historical data. For example, if the return is 20%, you can expect a USD 1,000 investment to grow to approximately USD 1,200 over one year under similar market conditions.
         
-        - **Max Sharpe Ratio Portfolio Volatility:** This represents the expected annualized risk (volatility) of the portfolio, meaning the percentage by which returns might fluctuate. A volatility of 31.39% indicates higher risk compared to less volatile portfolios.
+        - **Max Sharpe Ratio Portfolio Volatility:** This represents the expected annualized risk (volatility) of the portfolio, meaning the percentage by which returns might fluctuate. 
         
-        - **Max Sharpe Ratio:** This measures the portfolio's risk-adjusted return. A Sharpe Ratio of 0.88 means that for every unit of risk, the portfolio generates 0.88 units of excess return above the risk-free rate.
+        - **Max Sharpe Ratio:** This measures the portfolio's risk-adjusted return. A Sharpe Ratio of 0.8, for example, means that for every unit of risk, the portfolio generates 0.8 units of excess return above the risk-free rate.
         """)
     
         # Plot the Monte Carlo Simulations (Risk vs Return)
@@ -217,8 +217,8 @@ with tab3:
         
         The pie chart shows the recommended allocation of your investment across the selected stocks to achieve the optimal portfolio. For example:
         
-        - If you want to invest **$1000**, multiply the allocation percentage for each stock by $1000. 
-          - For instance, if a stock has a 30% allocation, you should invest **$300** in that stock.
+        - If you want to invest **USD 1,000**, multiply the allocation percentage for each stock by USD 1,000. 
+          - For instance, if a stock has a 30% allocation, you should invest **USD 300** in that stock.
         - This allocation is based on maximizing the Sharpe Ratio, which provides the best balance between risk and return.
         """)
 
