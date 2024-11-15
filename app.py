@@ -177,6 +177,9 @@ with tab3:
         - **Max Sharpe Ratio Portfolio Volatility:** This represents the expected annualized risk (volatility) of the portfolio, meaning the percentage by which returns might fluctuate. 
         
         - **Max Sharpe Ratio:** This measures the portfolio's risk-adjusted return. A Sharpe Ratio of 0.8, for example, means that for every unit of risk, the portfolio generates 0.8 units of excess return above the risk-free rate.
+
+        **Risk-Free Rate Assumption:**
+        - The risk-free rate is assumed to be **1%** (0.01) annually in this analysis. This reflects the approximate yield on short-term government bonds, which are considered low-risk investments. Adjusting the risk-free rate to reflect current market conditions may change the Sharpe Ratio but not the portfolio's allocation.
         """)
     
         # Plot the Monte Carlo Simulations (Risk vs Return)
