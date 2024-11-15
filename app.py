@@ -8,7 +8,7 @@ from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import load_model
 import pandas as pd
 import numpy as np
-st.title("Comprehensive Stock Analysis App")
+st.title("Stock Prediction and Portfolio Optimization App")
 tab1,tab2,tab3=st.tabs(['Stock Info','Forecaste Using Ml Models','Monte Carlo Simulation'])
 # Title and introduction
 
