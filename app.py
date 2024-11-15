@@ -61,7 +61,7 @@ with tab1:
         "Market Cap": stock_info.get('marketCap', 'N/A'),
         "Previous Close": stock_info.get('previousClose', 'N/A'),
         "52-Week High": stock_info.get('fiftyTwoWeekHigh', 'N/A'),
-        "52-Week Low": stock_info.get('fiftyTwoWeekLow', 'N/A'),
+        "52-Week Low": stock_info.get('fiftyTwoWeekLow', 'N/A'), 
         "200-Day Average": stock_info.get('twoHundredDayAverage', 'N/A'),
         "Short Ratio": stock_info.get('shortRatio', 'N/A')
     }
@@ -317,6 +317,10 @@ with tab2:
 
     # Plotting candlesticks
     mpf.plot(candlestick_data, type='candle', style='charles', ax=ax, show_nontrading=True)
+
+    # Force y-axis to appear on the left
+    ax.yaxis.set_label_position("left")
+    ax.yaxis.tick_left()
 
     # Overlay the predicted prices as a line plot
     ax.plot(prediction_dates, predicted_prices, linestyle='-', marker='o', color='red', label='Predicted Adj Close')
