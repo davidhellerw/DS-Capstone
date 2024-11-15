@@ -9,7 +9,7 @@ from tensorflow.keras.models import load_model
 import pandas as pd
 import numpy as np
 st.title("Stock Prediction and Portfolio Optimization App")
-tab1,tab2,tab3=st.tabs(['Stock Info','Forecaste Using Ml Models','Monte Carlo Simulation'])
+tab1,tab2,tab3=st.tabs(['Stock Exploration','Price Predictions Using ML Models','Portfolio Allocation Optimization'])
 # Title and introduction
 
 with tab1:
