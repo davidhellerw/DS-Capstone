@@ -316,7 +316,7 @@ with tab2:
 
     # Create a slider for selecting the number of days to predict
     days_to_predict = st.slider(
-        "Select Number of Days to Predict",
+        "📅 Select Number of Days to Predict",
         min_value=1, 
         max_value=365,  # You can adjust this based on your requirements
         value=10,       # Default value (you can change it)
