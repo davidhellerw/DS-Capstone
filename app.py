@@ -11,22 +11,20 @@ import numpy as np
 st.title("Stock Prediction and Portfolio Optimization App")
 tab4, tab1,tab2,tab3=st.tabs(['About This App', 'Stock Exploration','Price Predictions Using ML Models','Portfolio Allocation Optimization'])
 
-# Title and introduction for the "About This App" tab
-# Title and introduction for the "About This App" tab
 with tab4:
     st.title("App Overview")
     
     # App Introduction
-    st.markdown("""
+    st.markdown("""  
     Welcome to the **Stock Prediction and Portfolio Optimization App**! This app is a comprehensive tool designed for stock market enthusiasts, investors, and analysts who want to:
     - **Explore stock data**, 
     - **Predict future prices**, and 
     - **Optimize investment portfolios** using advanced data science techniques.
     """)
-    
+
     # Features Section
     st.subheader("Key Features")
-    st.markdown("""
+    st.markdown("""  
     1. **Stock Exploration**  
        Dive deep into the performance of your favorite stocks with the following tools:
        - Historical stock price trends
@@ -46,10 +44,10 @@ with tab4:
        - Maximize the **Sharpe Ratio** for a balanced trade-off between risk and return.  
        - This feature helps you build a portfolio that aligns with your financial goals and risk tolerance.
     """)
-    
+
     # About the Author
     st.subheader("About the Author")
-    st.markdown("""
+    st.markdown("""  
     Hi, I'm **David Heller**, a data scientist with a robust background in finance and machine learning.  
     - I created this app to combine my expertise in data analysis, financial markets, and advanced modeling techniques.  
     - My goal is to provide an intuitive, data-driven tool to empower investors in making smarter decisions.
