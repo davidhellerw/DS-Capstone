@@ -340,24 +340,4 @@ with tab2:
 
     
     # Add an explanation of LSTM and its usage
-    st.markdown("""
-    ### What is LSTM and How Is It Used Here?
-    
-    **Long Short-Term Memory (LSTM)** is a type of Recurrent Neural Network (RNN) specifically designed to handle sequential data and long-term dependencies. It is particularly effective in time series forecasting, where the data points are connected over time.
-    
-    In this app:
-    - The **LSTM model** is trained on past stock prices (adjusted close prices) to learn patterns and trends in the data.
-    - Using the most recent **60 days of stock prices** as input, the model predicts the next day's price. This process is repeated iteratively to forecast multiple future days.
-    
-    ### How the Forecast Works:
-    1. **Data Preparation**: The historical adjusted close prices are normalized (scaled to a range between 0 and 1) to help the model process the data effectively.
-    2. **Sliding Window Input**: The model uses the last 60 days of prices to predict the next day’s price. This sliding window approach ensures the model has context for recent trends.
-    3. **Iterative Prediction**: Once the next price is predicted, it is added back to the input data, and the process repeats for the specified number of days.
-    
-    ### Benefits of LSTM:
-    - LSTMs can capture **non-linear relationships** and dependencies in the data, which makes them ideal for forecasting stock prices.
-    - The iterative prediction process allows the model to forecast multiple steps into the future.
-    
-    **Note**: While LSTM models are powerful, stock prices are influenced by numerous external factors (e.g., market conditions, news, and macroeconomic trends) that the model may not account for, so predictions should be used cautiously.
-    """)
-    
+    st.markdown("### Test LSTM Explanation")
