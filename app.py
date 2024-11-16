@@ -8,7 +8,7 @@ from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import load_model
 import pandas as pd
 import numpy as np
-st.title("Stock Prediction and Portfolio Optimization App")
+st.title("Stock Prediction and Portfolio Optimization App 📈")
 tab4, tab1,tab2,tab3=st.tabs(['About This App', 'Stock Exploration','Price Predictions Using ML Models','Portfolio Allocation Optimization'])
 
 with tab4:
