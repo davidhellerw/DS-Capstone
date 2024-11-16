@@ -15,11 +15,7 @@ tab4, tab1,tab2,tab3=st.tabs(['About This App', 'Stock Exploration','Price Predi
 with tab4:
     st.title("App Overview")
     
-   # App Overview
-    st.title("About This App")
-    
     # App Introduction
-    st.subheader("App Overview")
     st.markdown("""
     Welcome to the **Stock Prediction and Portfolio Optimization App**! This app is a comprehensive tool designed for stock market enthusiasts, investors, and analysts who want to:
     - **Explore stock data**, 
