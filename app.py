@@ -126,6 +126,17 @@ with tab1:
     else:
         st.markdown("**Website**: N/A")
 
+    st.subheader("Understanding the Company Metrics")
+    st.markdown("""
+    - **Company Name**: The official name of the company associated with the selected stock ticker.
+    - **Average Volume**: The average number of shares traded daily over a specific period. It gives an idea of the stock's liquidity, where higher values generally indicate more actively traded stocks.
+    - **Market Cap (Market Capitalization)**: The total market value of a company’s outstanding shares. It is calculated by multiplying the current share price by the total number of outstanding shares. This metric indicates the company's size and overall value in the market.
+    - **Previous Close**: The stock's last closing price from the most recent trading day. It provides a reference point for the stock's performance compared to its current trading price.
+    - **52-Week High and Low**: The highest and lowest stock prices recorded over the past 52 weeks. These metrics show the stock's price range and help gauge its volatility.
+    - **200-Day Average**: The average stock price over the last 200 trading days. This is often used as a trend indicator, showing whether the stock is trading above or below its long-term average price.
+    - **Short Ratio**: The ratio of shares sold short (borrowed and sold in anticipation of a price drop) to the average daily trading volume. A high short ratio may indicate bearish sentiment or a potential short squeeze if the stock's price rises unexpectedly.
+    """)
+
     # Plot closing price with Moving Averages
     st.subheader(f"{ticker} Closing Price & Moving Averages")
     stock_data['20_MA'] = stock_data['Close'].rolling(window=20).mean()
