@@ -15,35 +15,53 @@ tab4, tab1,tab2,tab3=st.tabs(['About This App', 'Stock Exploration','Price Predi
 with tab4:
     st.title("App Overview")
     
-    # App Overview
-    st.markdown("""
-    Welcome to the **Stock Prediction and Portfolio Optimization App**! This app is designed for stock market enthusiasts, investors, and analysts who want to explore stock data, predict future prices, and optimize their portfolios using advanced data science techniques.
-    """)
-
-    # Features
-    st.subheader("Features")
-    st.markdown("""
-    - **Stock Exploration**:  
-      Analyze historical stock prices, explore detailed company information, and visualize key moving averages (20-day and 50-day). Gain insights into the performance of your favorite stocks.
+   # App Overview
+    st.title("About This App")
     
-    - **Price Predictions Using LSTM**:  
-      Utilize a **Deep Learning Model (LSTM)** to predict future stock prices based on historical data.  
-        - The model learns patterns and trends in historical prices and provides forecasts for up to 365 days.  
-        - This feature helps users identify potential future trends in stock prices, aiding in better decision-making.
-    
-    - **Portfolio Allocation Optimization**:  
-      Use **Monte Carlo Simulations** to determine the optimal allocation of stocks in your portfolio.  
-        - This feature identifies the portfolio configuration that maximizes the Sharpe Ratio, balancing risk and return effectively.
+    # App Introduction
+    st.subheader("App Overview")
+    st.markdown("""
+    Welcome to the **Stock Prediction and Portfolio Optimization App**! This app is a comprehensive tool designed for stock market enthusiasts, investors, and analysts who want to:
+    - **Explore stock data**, 
+    - **Predict future prices**, and 
+    - **Optimize investment portfolios** using advanced data science techniques.
     """)
-
+    
+    # Features Section
+    st.subheader("Key Features")
+    st.markdown("""
+    1. **Stock Exploration**  
+       Dive deep into the performance of your favorite stocks with the following tools:
+       - Historical stock price trends
+       - Detailed company information
+       - Visualizations of key moving averages (20-day and 50-day)
+       - Insightful metrics to track stock performance
+    
+    2. **Price Predictions Using LSTM**  
+       Make informed predictions with the power of **Deep Learning**:  
+       - **LSTM (Long Short-Term Memory)** models analyze historical stock prices to forecast future trends.  
+       - Predict up to **365 days** into the future based on patterns in historical data.  
+       - Get a better understanding of potential price movements to aid in decision-making.
+    
+    3. **Portfolio Allocation Optimization**  
+       Optimize your investments with **Monte Carlo Simulations**:  
+       - Discover the best allocation of stocks in your portfolio.  
+       - Maximize the **Sharpe Ratio** for a balanced trade-off between risk and return.  
+       - This feature helps you build a portfolio that aligns with your financial goals and risk tolerance.
+    """)
+    
     # About the Author
     st.subheader("About the Author")
     st.markdown("""
-    My name is **David Heller**, and I am a data scientist with a strong background in finance and machine learning.  
-    I created this app to combine my skills and passion for data analysis, financial markets, and technology, providing users with an intuitive and powerful tool to make data-driven investment decisions.
-
-    Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/david-heller-w/) or explore my [GitHub](https://github.com/davidhellerw) for more projects.
+    Hi, I'm **David Heller**, a data scientist with a robust background in finance and machine learning.  
+    - I created this app to combine my expertise in data analysis, financial markets, and advanced modeling techniques.  
+    - My goal is to provide an intuitive, data-driven tool to empower investors in making smarter decisions.
+    
+    Feel free to connect with me or explore more of my work:  
+    - **LinkedIn**: [David Heller](https://www.linkedin.com/in/david-heller-w/)  
+    - **GitHub**: [David Heller's GitHub](https://github.com/davidhellerw)
     """)
+
 
 with tab1:
     st.title("Stock Info")
