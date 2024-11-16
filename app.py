@@ -141,6 +141,27 @@ with tab1:
     plt.legend()
     st.pyplot(plt)
 
+    # Explanation for the chart
+    st.markdown("""
+    ### How to Read the Chart
+    - **Closing Price (Blue Line)**: Represents the stock's closing price for each trading day.
+    - **20-Day Moving Average (Orange Line)**: A short-term trend indicator.  
+      - It calculates the average closing price over the past 20 trading days.  
+      - A rising 20-day moving average often indicates a short-term uptrend.
+    - **50-Day Moving Average (Green Line)**: A medium-term trend indicator.  
+      - It calculates the average closing price over the past 50 trading days.  
+      - It's generally used to identify longer-term trends compared to the 20-day moving average.
+    
+    #### Key Insights:
+    1. **Crossovers**:  
+       - When the 20-day moving average crosses above the 50-day moving average, it might indicate a bullish signal (buying opportunity).  
+       - Conversely, when the 20-day crosses below the 50-day moving average, it might indicate a bearish signal (selling opportunity).
+    2. **Trend Confirmation**:  
+       - Both moving averages moving upwards can confirm an uptrend.  
+       - Both moving downwards can indicate a downtrend.
+    3. **Support/Resistance**:  
+       - Moving averages can act as dynamic support or resistance levels for the stock price.
+    """)
 
 
 with tab3:
@@ -238,9 +259,9 @@ with tab3:
         cbar = fig.colorbar(scatter, ax=ax)
         cbar.set_label("Sharpe Ratio")  # Label the colorbar
 
-        ax.set_xlabel("Expected Volatility")
-        ax.set_ylabel("Expected Return")
-        ax.set_title("Portfolio Optimization: Risk vs Return")
+        ax.set_xlabel("Expected Annualized Volatility")
+        ax.set_ylabel("Expected Annualized Return")
+        ax.set_title("Portfolio Optimization: Expected Return vs. Risk")
     
         # Highlight the best Sharpe ratio
         ax.scatter(best_volatility, best_return, color='red', marker='*', s=200, label="Max Sharpe Ratio")
@@ -375,7 +396,7 @@ with tab2:
     # Add title, labels, and ensure proper axis limits
     ax.set_title(f"{selected_ticker} Adjusted Close Price Prediction for Next {days_to_predict} Days")
     ax.set_xlabel('Date')
-    ax.set_ylabel('Price')
+    ax.set_ylabel('Price (USD)')
     ax.legend()
 
     # Adjust the x-axis to ensure proper display of dates
