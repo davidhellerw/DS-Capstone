@@ -9,8 +9,41 @@ from tensorflow.keras.models import load_model
 import pandas as pd
 import numpy as np
 st.title("Stock Prediction and Portfolio Optimization App")
-tab1,tab2,tab3=st.tabs(['Stock Exploration','Price Predictions Using ML Models','Portfolio Allocation Optimization'])
-# Title and introduction
+tab4, tab1,tab2,tab3=st.tabs(['About This App', 'Stock Exploration','Price Predictions Using ML Models','Portfolio Allocation Optimization'])
+
+# Title and introduction for the "About This App" tab
+with tab4:
+    st.title("App Overview")
+    
+    # App Overview
+    st.markdown("""
+    Welcome to the **Stock Prediction and Portfolio Optimization App**! This app is designed for stock market enthusiasts, investors, and analysts who want to explore stock data, predict future prices, and optimize their portfolios using advanced data science techniques.
+    """)
+
+    # Features
+    st.subheader("Features")
+    st.markdown("""
+    - **Stock Exploration**:  
+      Analyze historical stock prices, explore detailed company information, and visualize key moving averages (20-day and 50-day). Gain insights into the performance of your favorite stocks.
+    
+    - **Price Predictions Using LSTM**:  
+      Utilize a **Deep Learning Model (LSTM)** to predict future stock prices based on historical data.  
+        - The model learns patterns and trends in historical prices and provides forecasts for up to 365 days.  
+        - This feature helps users identify potential future trends in stock prices, aiding in better decision-making.
+    
+    - **Portfolio Allocation Optimization**:  
+      Use **Monte Carlo Simulations** to determine the optimal allocation of stocks in your portfolio.  
+        - This feature identifies the portfolio configuration that maximizes the Sharpe Ratio, balancing risk and return effectively.
+    """)
+
+    # About the Author
+    st.subheader("About the Author")
+    st.markdown("""
+    My name is **David Heller**, and I am a data scientist with a strong background in finance and machine learning.  
+    I created this app to combine my skills and passion for data analysis, financial markets, and technology, providing users with an intuitive and powerful tool to make data-driven investment decisions.
+
+    Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/david-heller-w/) or explore my [GitHub](https://github.com/davidhellerw) for more projects.
+    """)
 
 with tab1:
     st.title("Stock Info")
