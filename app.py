@@ -8,11 +8,11 @@ from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import load_model
 import pandas as pd
 import numpy as np
-st.title("Stock Prediction and Portfolio Optimization App 📈")
+st.title("Stock Prediction and Portfolio Optimization App")
 tab4, tab1,tab2,tab3=st.tabs(['About This App', 'Stock Exploration','Price Predictions Using ML Models','Portfolio Allocation Optimization'])
 
 with tab4:
-    st.title("App Overview")
+    st.title("📖 App Overview")
     
     # App Introduction
     st.markdown("""  
@@ -46,7 +46,7 @@ with tab4:
     """)
 
     # About the Author
-    st.subheader("About the Author")
+    st.subheader("👨‍💻 About the Author")
     st.markdown("""  
     Hi, I'm **David Heller**, a data scientist with a robust background in finance and machine learning.  
     - I created this app to combine my expertise in data analysis, financial markets, and advanced modeling techniques.  
@@ -60,7 +60,7 @@ with tab4:
 
 
 with tab1:
-    st.title("Stock Info")
+    st.title("📊 Stock Info")
     
     # Dropdown for stock tickers
     tickers = [
@@ -79,11 +79,11 @@ with tab1:
         "EQIX", "PSA", "AVB", "EQR", "IRM", "EXR", "MAA", "ESS", "UMH", "APTS"
     ]
 
-    ticker = st.selectbox("Select a stock ticker", tickers)
+    ticker = st.selectbox("🪙 Select a stock ticker", tickers)
 
     # Date range input
-    start_date = st.date_input("Start Date", value=pd.to_datetime("2023-01-01"))
-    end_date = st.date_input("End Date", value=pd.to_datetime("2024-01-01"))
+    start_date = st.date_input("📅 Start Date", value=pd.to_datetime("2023-01-01"))
+    end_date = st.date_input("📅 End Date", value=pd.to_datetime("2024-01-01"))
 
     # Download stock data for the selected ticker
     stock_data = yf.download(ticker, start=start_date, end=end_date)
@@ -176,10 +176,10 @@ with tab1:
 
 
 with tab3:
-    st.title("Monte Carlo Simulation for Portfolio Optimization")
+    st.title("📊 Monte Carlo Simulation for Portfolio Optimization")
 
     # User selects the stocks
-    selected_stocks = st.multiselect("Select Stocks", tickers, default=['GOOGL', 'AAPL'])
+    selected_stocks = st.multiselect("🪙 Select Stocks", tickers, default=['GOOGL', 'AAPL'])
 
         # Ensure that the user selects at least 2 stocks
     if len(selected_stocks) < 2:
@@ -306,11 +306,11 @@ with tab3:
         """)
 
 with tab2:
-    st.title("Forecast Stock Prices Using LSTM")
+    st.title("🔮 Forecast Stock Prices Using LSTM")
 
     # Create a dropdown menu for the user to select the dataset
     selected_ticker = st.selectbox(
-        "Select Stock Dataset for Prediction",
+        "🪙 Select Stock Dataset for Prediction",
         ["AAPL", "GOOGL", "NKE", "IBM", "JNJ", "KO", "MSFT", "NFLX"]
     )
 
