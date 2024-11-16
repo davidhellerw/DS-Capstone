@@ -53,8 +53,9 @@ with tab4:
     - My goal is to provide an intuitive, data-driven tool to empower investors in making smarter decisions.
     
     Feel free to connect with me or explore more of my work:  
-    - **LinkedIn**: [David Heller](https://www.linkedin.com/in/david-heller-w/)  
-    - **GitHub**: [David Heller's GitHub](https://github.com/davidhellerw)
+    - [LinkedIn](https://www.linkedin.com/in/david-heller-w/)  
+    - [GitHub](https://github.com/davidhellerw)  
+    - [Personal Website](https://davidhellerw.com/)
     """)
 
 
