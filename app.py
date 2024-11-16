@@ -12,6 +12,7 @@ st.title("Stock Prediction and Portfolio Optimization App")
 tab4, tab1,tab2,tab3=st.tabs(['About This App', 'Stock Exploration','Price Predictions Using ML Models','Portfolio Allocation Optimization'])
 
 # Title and introduction for the "About This App" tab
+# Title and introduction for the "About This App" tab
 with tab4:
     st.title("App Overview")
     
@@ -57,6 +58,7 @@ with tab4:
     - **LinkedIn**: [David Heller](https://www.linkedin.com/in/david-heller-w/)  
     - **GitHub**: [David Heller's GitHub](https://github.com/davidhellerw)
     """)
+
 
 
 with tab1:
