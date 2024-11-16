@@ -338,6 +338,5 @@ with tab2:
     # Show the plot in Streamlit
     st.pyplot(fig)
 
-    
     # Add an explanation of LSTM and its usage
-    st.markdown("### Test LSTM Explanation")
+    st.write("### Test LSTM Explanation")
