@@ -35,7 +35,7 @@ with tab4:
     2. **Price Predictions Using LSTM**  
        Make informed predictions with the power of **Deep Learning**:  
        - **LSTM (Long Short-Term Memory)** models analyze historical stock prices to forecast future trends.  
-       - Predict up to **365 days** into the future based on patterns in historical data.  
+       - Predict up to **30 days** into the future based on patterns in historical data.  
        - Get a better understanding of potential price movements to aid in decision-making.
     
     3. **Portfolio Allocation Optimization**  
@@ -319,8 +319,8 @@ with tab2:
     days_to_predict = st.slider(
         "📅 Select Number of Days to Predict",
         min_value=1, 
-        max_value=365,  # You can adjust this based on your requirements
-        value=10,       # Default value (you can change it)
+        max_value=30,  # 
+        value=1,       # Default value 
         step=1          # Step size
     )
 
