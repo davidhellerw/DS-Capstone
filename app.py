@@ -319,8 +319,8 @@ with tab2:
     days_to_predict = st.slider(
         "📅 Select Number of Days to Predict",
         min_value=1, 
-        max_value=30,  # 
-        value=1,       # Default value 
+        max_value=30,   
+        value=5,       # Default value 
         step=1          # Step size
     )
 
