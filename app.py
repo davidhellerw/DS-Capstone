@@ -306,8 +306,9 @@ with tab3:
         - This allocation is based on maximizing the Sharpe Ratio, which provides the best balance between risk and return.
         """)
 
+
 with tab2:
-    st.title("🔮 Forecast Stock Prices Using LSTM")
+    st.title("🔮Forecasting using ML Models")
 
     # Create a dropdown menu for the user to select the dataset
     selected_ticker = st.selectbox(
@@ -319,7 +320,7 @@ with tab2:
     days_to_predict = st.slider(
         "📅 Select Number of Days to Predict",
         min_value=1, 
-        max_value=30,   
+        max_value=30,  
         value=5,       # Default value 
         step=1          # Step size
     )
@@ -378,7 +379,7 @@ with tab2:
 
     with col2:
         st.write(f"Historical Data for {selected_ticker} (Last {days_to_predict} Historical Prices)")
-        st.write(data['Adj Close'].tail(days_to_predict))  # Display last n historical prices
+        st.write(data['Adj Close'].tail(days_to_predict))  # Display last 10 historical prices
 
 
 
@@ -398,17 +399,13 @@ with tab2:
     # Plotting candlesticks
     mpf.plot(candlestick_data, type='candle', style='charles', ax=ax, show_nontrading=True)
 
-    # Force y-axis to appear on the left
-    ax.yaxis.set_label_position("left")
-    ax.yaxis.tick_left()
-
     # Overlay the predicted prices as a line plot
     ax.plot(prediction_dates, predicted_prices, linestyle='-', marker='o', color='red', label='Predicted Adj Close')
 
     # Add title, labels, and ensure proper axis limits
     ax.set_title(f"{selected_ticker} Adjusted Close Price Prediction for Next {days_to_predict} Days")
     ax.set_xlabel('Date')
-    ax.set_ylabel('Price (USD)')
+    ax.set_ylabel('Price')
     ax.legend()
 
     # Adjust the x-axis to ensure proper display of dates
@@ -417,8 +414,7 @@ with tab2:
 
     # Show the plot in Streamlit
     st.pyplot(fig)
-
-    # Add an explanation of LSTM and its usage
+    
     st.markdown("""
     ### What is LSTM and How Is It Used Here?
     
