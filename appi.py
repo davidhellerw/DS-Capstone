@@ -309,7 +309,7 @@ with tab3:
 
     
 with tab2:
-    st.title("🔮 Forecasting using ML Models")
+    st.title("🔮 Forecast Stock Prices Using LSTM")
 
     # Create a dropdown menu for the user to select the dataset
     selected_ticker = st.selectbox(
@@ -321,7 +321,7 @@ with tab2:
     days_to_predict = st.slider(
         "📅 Select Number of Days to Predict",
         min_value=1, 
-        max_value=30,  
+        max_value=30,   
         value=5,       # Default value 
         step=1          # Step size
     )
@@ -386,38 +386,33 @@ with tab2:
 
     
 
-    # Prepare the candlestick data (with Open, High, Low, Close)
-    candlestick_data = data[['Adj Close']].copy()
-    candlestick_data['Open'] = candlestick_data['Adj Close']
-    candlestick_data['High'] = candlestick_data['Adj Close']
-    candlestick_data['Low'] = candlestick_data['Adj Close']
-    candlestick_data['Close'] = candlestick_data['Adj Close']
-    candlestick_data['Volume'] = 0  # Set volume to 0 as we are not plotting it
-
-    # Creating a candlestick chart and overlaying predictions
-    fig, ax = plt.subplots(figsize=(15, 6))
+    # Create the plot
+    fig, ax = plt.subplots(figsize=(10, 5))
+    
+    # Plot historical 'Adj Close' prices as a line
+    ax.plot(data.index, data['Adj Close'], label='Historical Adj Close', color='blue')
+    
+    # Plot predicted prices as another line with markers
+    ax.plot(prediction_dates, predicted_prices, linestyle='-', marker='o', color='red', label='Predicted Adj Close')
+    
+    # Add title and labels
+    ax.set_title(f"{selected_ticker} Adjusted Close Price Prediction for Next {days_to_predict} Days")
+    ax.set_xlabel('Date')
+    ax.set_ylabel('Price (USD)')
+    
+    # Add legend
+    ax.legend()
+    
+    # Format x-axis dates
     import matplotlib.dates as mdates
     ax.xaxis.set_major_locator(mdates.AutoDateLocator())
     ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
-    
-    # Plot candlestick data
-    mpf.plot(candlestick_data, type='candle', style='charles', ax=ax)
-    
-    # Plot predicted prices
-    ax.plot(prediction_dates, predicted_prices, linestyle='-', marker='o', color='red', label='Predicted Adj Close')
-    
-    # Add title, labels, and legend
-    ax.set_title(f"{selected_ticker} Adjusted Close Price Prediction for Next {days_to_predict} Days")
-    ax.set_xlabel('Date')
-    ax.set_ylabel('Price')
-    ax.legend()
-    
-    # Rotate x-axis labels
     plt.xticks(rotation=45)
     
-    # Display plot in Streamlit
+    # Display the plot in Streamlit
     st.pyplot(fig)
-    
+
+    # Add an explanation of LSTM and its usage
     st.markdown("""
     ### What is LSTM and How Is It Used Here?
     
