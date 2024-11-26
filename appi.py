@@ -384,8 +384,6 @@ with tab2:
 
 
 
-    
-
     # Create the plot
     fig, ax = plt.subplots(figsize=(10, 5))
     
@@ -400,15 +398,14 @@ with tab2:
     # Add legend
     ax.legend()
     
-    # Format x-axis dates
-    import matplotlib.dates as mdates
-    ax.xaxis.set_major_locator(mdates.AutoDateLocator())
-    ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
-    plt.xticks(rotation=45)
+    # Set x-axis ticks to exactly match prediction dates
+    ax.set_xticks(prediction_dates)
+    ax.set_xticklabels(prediction_dates.strftime('%Y-%m-%d'), rotation=45)
     
     # Display the plot in Streamlit
     st.pyplot(fig)
 
+    
     # Add an explanation of LSTM and its usage
     st.markdown("""
     ### What is LSTM and How Is It Used Here?
