@@ -396,7 +396,7 @@ with tab2:
 
     # Creating a candlestick chart and overlaying predictions
     fig, ax = plt.subplots(figsize=(15, 6))
-
+    import matplotlib.dates as mdates
     ax.xaxis.set_major_locator(mdates.AutoDateLocator())
     ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
     
