@@ -389,10 +389,7 @@ with tab2:
     # Create the plot
     fig, ax = plt.subplots(figsize=(10, 5))
     
-    # Plot historical 'Adj Close' prices as a line
-    ax.plot(data.index, data['Adj Close'], label='Historical Adj Close', color='blue')
-    
-    # Plot predicted prices as another line with markers
+    # Plot only the predicted prices
     ax.plot(prediction_dates, predicted_prices, linestyle='-', marker='o', color='red', label='Predicted Adj Close')
     
     # Add title and labels
