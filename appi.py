@@ -309,20 +309,20 @@ with tab3:
 
     
 with tab2:
-    st.title("Forecasting using ML Models")
+    st.title("🔮 Forecasting using ML Models")
 
     # Create a dropdown menu for the user to select the dataset
     selected_ticker = st.selectbox(
-        "Select Stock Dataset for Prediction",
+        "🪙 Select Stock Dataset for Prediction",
         ["AAPL", "GOOGL", "NKE", "IBM", "JNJ", "KO", "MSFT", "NFLX"]
     )
 
     # Create a slider for selecting the number of days to predict
     days_to_predict = st.slider(
-        "Select Number of Days to Predict",
+        "📅 Select Number of Days to Predict",
         min_value=1, 
-        max_value=365,  # You can adjust this based on your requirements
-        value=10,       # Default value (you can change it)
+        max_value=30,  
+        value=5,       # Default value 
         step=1          # Step size
     )
 
