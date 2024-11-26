@@ -397,24 +397,27 @@ with tab2:
     # Creating a candlestick chart and overlaying predictions
     fig, ax = plt.subplots(figsize=(15, 6))
 
-    # Plotting candlesticks
-    mpf.plot(candlestick_data, type='candle', style='charles', ax=ax, show_nontrading=True)
-
-    # Overlay the predicted prices as a line plot
+    ax.xaxis.set_major_locator(mdates.AutoDateLocator())
+    ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+    
+    # Plot candlestick data
+    mpf.plot(candlestick_data, type='candle', style='charles', ax=ax)
+    
+    # Plot predicted prices
     ax.plot(prediction_dates, predicted_prices, linestyle='-', marker='o', color='red', label='Predicted Adj Close')
-
-    # Add title, labels, and ensure proper axis limits
+    
+    # Add title, labels, and legend
     ax.set_title(f"{selected_ticker} Adjusted Close Price Prediction for Next {days_to_predict} Days")
     ax.set_xlabel('Date')
     ax.set_ylabel('Price')
     ax.legend()
-
-    # Adjust the x-axis to ensure proper display of dates
-    ax.set_xticks(prediction_dates)
-    ax.set_xticklabels(prediction_dates.strftime('%Y-%m-%d'), rotation=45)
-
-    # Show the plot in Streamlit
+    
+    # Rotate x-axis labels
+    plt.xticks(rotation=45)
+    
+    # Display plot in Streamlit
     st.pyplot(fig)
+    
     st.markdown("""
     ### What is LSTM and How Is It Used Here?
     
