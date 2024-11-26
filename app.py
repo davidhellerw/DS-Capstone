@@ -398,7 +398,9 @@ with tab2:
     # Plotting candlesticks
     mpf.plot(candlestick_data, type='candle', style='charles', ax=ax, show_nontrading=True)
 
-    
+    # Force y-axis to appear on the left
+    ax.yaxis.set_label_position("left")
+    ax.yaxis.tick_left()
 
     # Overlay the predicted prices as a line plot
     ax.plot(prediction_dates, predicted_prices, linestyle='-', marker='o', color='red', label='Predicted Adj Close')
