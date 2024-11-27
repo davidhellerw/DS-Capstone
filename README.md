@@ -1,33 +1,76 @@
 <h1>Stock Prediction and Portfolio Optimization App</h1>
 
 <h2>Overview</h2>
-<p>This Streamlit app integrates advanced machine learning models and financial techniques to provide investors and analysts with insights into stock prices and portfolio management. The app enables users to explore stock data, predict future stock prices, and optimize portfolio allocations using Monte Carlo simulations. It’s a comprehensive tool aimed at empowering users to make smarter, data-driven investment decisions.</p>
+<p>The <strong>Stock Prediction and Portfolio Optimization App</strong> is a powerful, interactive Streamlit-based application designed to empower investors and analysts. By combining advanced machine learning models and sophisticated financial techniques, this app helps users analyze stock data, forecast future stock prices, and optimize portfolio allocations. Whether you're a seasoned investor or a beginner, this app provides the insights you need to make smarter, data-driven investment decisions.</p>
+
+<p>Access the app live at: <a href="https://stock-forecast-and-allocate.streamlit.app/">Stock Forecast and Allocate</a></p>
 
 <h2>Features</h2>
 <ul>
-  <li><strong>Stock Exploration:</strong> Analyze historical stock performance, visualize trends, and view company-specific metrics like market cap, average volume, and 52-week highs/lows.</li>
-  <li><strong>Price Prediction:</strong> Predict up to 30 days of stock prices using pretrained LSTM models for popular stocks like Apple, Google, and Microsoft.</li>
-  <li><strong>Portfolio Optimization:</strong> Optimize portfolio allocations using Monte Carlo simulations to maximize the Sharpe Ratio and balance risk vs. return.</li>
+  <li><strong>Stock Exploration:</strong>
+    <ul>
+      <li>Analyze historical stock performance with intuitive visualizations.</li>
+      <li>Track key metrics such as 52-week high/low, market capitalization, average trading volume, and moving averages (20-day and 50-day).</li>
+      <li>Fetch detailed company information, including short ratio, previous close price, and website links.</li>
+      <li>Summarize company metrics in a tabular format for easy comparison.</li>
+      <li>Customize analysis by selecting specific date ranges.</li>
+    </ul>
+  </li>
+  <li><strong>Price Prediction Using LSTM:</strong>
+    <ul>
+      <li>Predict up to 30 days of stock prices using pretrained Long Short-Term Memory (LSTM) models.</li>
+      <li>Available for popular tickers such as Apple, Google, Microsoft, and more.</li>
+      <li>Interactive features include a slider to set prediction days and comparisons of predicted vs. historical prices.</li>
+      <li>Visualize predictions with dynamic charts.</li>
+    </ul>
+  </li>
+  <li><strong>Portfolio Optimization:</strong>
+    <ul>
+      <li>Optimize portfolio allocations using Monte Carlo simulations with over 10,000 iterations.</li>
+      <li>Maximize the Sharpe Ratio to balance risk and return effectively.</li>
+      <li>Visualize portfolio performance using scatter plots of risk vs. return, color-coded by Sharpe Ratio.</li>
+      <li>Generate pie charts to display the best allocation strategy.</li>
+      <li>Obtain detailed metrics such as expected return, volatility, and Sharpe Ratio for the optimal portfolio.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>Tools and Technologies</h2>
+<ul>
+  <li><strong>Programming Languages:</strong> Python</li>
+  <li><strong>Machine Learning Frameworks:</strong> TensorFlow, Keras, Scikit-learn</li>
+  <li><strong>Data Handling:</strong> Pandas, NumPy, Yahoo Finance API (yfinance)</li>
+  <li><strong>Visualization Tools:</strong> Matplotlib, Plotly, MplFinance</li>
+  <li><strong>Portfolio Optimization:</strong> Monte Carlo simulations</li>
+  <li><strong>Deployment:</strong> Streamlit Cloud</li>
 </ul>
 
 <h2>Project Structure</h2>
 <pre>
 stock_prediction_portfolio_optimization/
 │
-├── app.py                              # Main Streamlit app script
-├── requirements.txt                    # Dependencies to run the app
-├── README.md                           # Documentation of the project
-├── Data_Collection_&_Feature_Engineering_(msft).ipynb  # Data collection and feature engineering notebook
-├── ML_Models.ipynb                     # Machine learning model training and testing
+├── .devcontainer/                       # Dev container configuration
+│   └── devcontainer.json
+├── app.py                               # Main Streamlit app script
+├── appi.py                              # Alternate app script
+├── requirements.txt                     # Dependencies to run the app
+├── README.md                            # Documentation of the project
+├── Data_Collection_&_Feature_Engineering_(msft).ipynb  # Data preprocessing notebook
+├── ML_Models.ipynb                      # Notebook for machine learning models
 ├── Portfolio Optimization Using Monte Carlo Simulations (1).ipynb  # Portfolio optimization notebook
-├── models/
-│   ├── lstm_Apple.keras                # Pretrained LSTM model for Apple
-│   ├── lstm_google.keras               # Pretrained LSTM model for Google
-│   ├── lstm_ibm.keras                  # Pretrained LSTM model for IBM
-│   ├── xgboost_model_google.pkl        # Pretrained XGBoost model for Google
-│   └── ...                             # Other pretrained models
-└── data/
-    └── historical_stock_data.csv       # Processed historical stock data
+├── models/                              # Directory for pretrained models
+│   ├── lstm_Apple.keras                 # Pretrained LSTM model for Apple
+│   ├── lstm_google.keras                # Pretrained LSTM model for Google
+│   ├── lstm_ibm.keras                   # Pretrained LSTM model for IBM
+│   ├── lstm_jnj.keras                   # Pretrained LSTM model for Johnson & Johnson
+│   ├── lstm_ko.keras                    # Pretrained LSTM model for Coca-Cola
+│   ├── lstm_msft.keras                  # Pretrained LSTM model for Microsoft
+│   ├── lstm_netflix.keras               # Pretrained LSTM model for Netflix
+│   ├── xgboost_model_google.pkl         # Pretrained XGBoost model for Google
+│   ├── xgboost_model_ibm.pkl            # Pretrained XGBoost model for IBM
+│   └── ...                              # Other pretrained models
+├── data/                                # Directory for processed data
+│   └── historical_stock_data.csv        # Historical stock data
 </pre>
 
 <h2>Setup & Installation</h2>
