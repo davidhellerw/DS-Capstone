@@ -5,6 +5,10 @@
 
 <p>Access the app live at: <a href="https://stock-forecast-and-allocate.streamlit.app/">Stock Forecast and Allocate</a></p>
 
+<h2>App Screenshot</h2>
+
+<img src="app_screenshot.png" alt="App Screenshot" width="800">
+
 <h2>Features</h2>
 <ul>
   <li><strong>Stock Exploration:</strong>
