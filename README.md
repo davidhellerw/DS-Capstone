@@ -52,7 +52,7 @@ stock_prediction_portfolio_optimization/
 ├── .devcontainer/                       # Dev container configuration
 │   └── devcontainer.json
 ├── app.py                               # Main Streamlit app script
-├── appi.py                              # Alternate app script
+├── appi.py                              # Alternate app script (for testing and development)
 ├── requirements.txt                     # Dependencies to run the app
 ├── README.md                            # Documentation of the project
 ├── Data_Collection_&_Feature_Engineering_(msft).ipynb  # Data preprocessing notebook
@@ -66,12 +66,24 @@ stock_prediction_portfolio_optimization/
 │   ├── lstm_ko.keras                    # Pretrained LSTM model for Coca-Cola
 │   ├── lstm_msft.keras                  # Pretrained LSTM model for Microsoft
 │   ├── lstm_netflix.keras               # Pretrained LSTM model for Netflix
+│   ├── lstm_nike.keras                  # Pretrained LSTM model for Nike
 │   ├── xgboost_model_google.pkl         # Pretrained XGBoost model for Google
 │   ├── xgboost_model_ibm.pkl            # Pretrained XGBoost model for IBM
-│   └── ...                              # Other pretrained models
-├── data/                                # Directory for processed data
-│   └── historical_stock_data.csv        # Historical stock data
+│   ├── xgboost_model_jnj.pkl            # Pretrained XGBoost model for Johnson & Johnson
+│   ├── xgboost_model_ko.pkl             # Pretrained XGBoost model for Coca-Cola
+│   ├── xgboost_model_msft.pkl           # Pretrained XGBoost model for Microsoft
+│   └── xgboost_model_netflix.pkl        # Pretrained XGBoost model for Netflix
+├── data/                                # Directory for processed data and CSV files
+│   ├── APPLE.csv                        # Historical stock data for Apple
+│   ├── GOOGLE.csv                       # Historical stock data for Google
+│   ├── IBM.csv                          # Historical stock data for IBM
+│   ├── JNJ.csv                          # Historical stock data for Johnson & Johnson
+│   ├── KO.csv                           # Historical stock data for Coca-Cola
+│   ├── MSFT.csv                         # Historical stock data for Microsoft
+│   ├── NETFLIX.csv                      # Historical stock data for Netflix
+│   └── NIKE.csv                         # Historical stock data for Nike
 </pre>
+
 
 <h2>Setup & Installation</h2>
 <ol>
