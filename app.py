@@ -380,43 +380,27 @@ with tab2:
         st.write(f"Historical Data for {selected_ticker} (Last {days_to_predict} Historical Prices)")
         st.write(data['Adj Close'].tail(days_to_predict))  # Display last n historical prices
 
-
-
+ # Create the plot
+    fig, ax = plt.subplots(figsize=(10, 5))
     
-
-    # Prepare the candlestick data (with Open, High, Low, Close)
-    candlestick_data = data[['Adj Close']].copy()
-    candlestick_data['Open'] = candlestick_data['Adj Close']
-    candlestick_data['High'] = candlestick_data['Adj Close']
-    candlestick_data['Low'] = candlestick_data['Adj Close']
-    candlestick_data['Close'] = candlestick_data['Adj Close']
-    candlestick_data['Volume'] = 0  # Set volume to 0 as we are not plotting it
-
-    # Creating a candlestick chart and overlaying predictions
-    fig, ax = plt.subplots(figsize=(15, 6))
-
-    # Plotting candlesticks
-    mpf.plot(candlestick_data, type='candle', style='charles', ax=ax, show_nontrading=True)
-
-    # Force y-axis to appear on the left
-    ax.yaxis.set_label_position("left")
-    ax.yaxis.tick_left()
-
-    # Overlay the predicted prices as a line plot
+    # Plot only the predicted prices
     ax.plot(prediction_dates, predicted_prices, linestyle='-', marker='o', color='red', label='Predicted Adj Close')
-
-    # Add title, labels, and ensure proper axis limits
+    
+    # Add title and labels
     ax.set_title(f"{selected_ticker} Adjusted Close Price Prediction for Next {days_to_predict} Days")
     ax.set_xlabel('Date')
     ax.set_ylabel('Price (USD)')
+    
+    # Add legend
     ax.legend()
-
-    # Adjust the x-axis to ensure proper display of dates
+    
+    # Set x-axis ticks to exactly match prediction dates
     ax.set_xticks(prediction_dates)
     ax.set_xticklabels(prediction_dates.strftime('%Y-%m-%d'), rotation=45)
+    
+    # Display the plot in Streamlit
+    st.pyplot(fig)   
 
-    # Show the plot in Streamlit
-    st.pyplot(fig)
 
     # Add an explanation of LSTM and its usage
     st.markdown("""
