@@ -97,8 +97,9 @@ with tab1:
     st.write(stock_data)
 
     # Display additional metrics
-    max_close_price = round(stock_data['Close'].max(), 2)  # Round to 2 decimal places
-    min_close_price = round(stock_data['Close'].min(), 2)  # Round to 2 decimal places
+    # Extract the max and min close prices and round to 2 decimals
+    max_close_price = round(stock_data['Close'].max().item(), 2) 
+    min_close_price = round(stock_data['Close'].min().item(), 2)  
 
     st.write(f"Max Close Price: ${max_close_price}")  # Display as USD
     st.write(f"Min Close Price: ${min_close_price}")  # Display as USD
