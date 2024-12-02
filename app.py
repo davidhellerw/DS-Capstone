@@ -70,7 +70,7 @@ with tab1:
         "PFE", "BABA", "IBM", "KO", "GS", "AXP", "BA", "GE", "CAT", "RTX",
         "HD", "MCD", "PEP", "UNH", "MRK", "CVX", "XOM", "GS", "USB", "WFC",
         "C", "BAC", "UNP", "MMM", "T", "VZ", "INTU", "ADBE", "ORCL", "QCOM",
-        "MU", "XLNX", "LMT", "UPS", "F", "GM", "TGT", "LOW", "EXXON", "FIS",
+        "MU", "XLNX", "LMT", "UPS", "F", "GM", "TGT", "LOW", "XOM", "FIS",
         "ISRG", "MDT", "ABT", "SYK", "BMY", "GILD", "AMGN", "BIIB", "LLY", "MO",
         "PM", "KO", "PEP", "CL", "PG", "UN", "COST", "SBUX", "TSCO", "DE", "ADM",
         "CHD", "STZ", "NEM", "HUM", "CI", "ANTM", "AIG", "TMO", "RMD", "SIVB",
