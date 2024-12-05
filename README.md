@@ -62,6 +62,9 @@ stock_prediction_portfolio_optimization/
 ├── Data_Collection_&_Feature_Engineering_(msft).ipynb  # Data preprocessing notebook
 ├── ML_Models.ipynb                      # Notebook for machine learning models
 ├── Portfolio Optimization Using Monte Carlo Simulations (1).ipynb  # Portfolio optimization notebook
+├── David Heller Capstone Project Proposal.docx  # One-page project proposal
+├── Capstone Project Report.docx         # Project Report
+├── Stock Prediction and Portfolio Optimization App Presentation.pptx  # Project Presentation
 ├── models/                              # Directory for pretrained models
 │   ├── lstm_Apple.keras                 # Pretrained LSTM model for Apple
 │   ├── lstm_google.keras                # Pretrained LSTM model for Google
